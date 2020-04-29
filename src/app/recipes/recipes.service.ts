@@ -13,7 +13,7 @@ export class RecipeService {
       "Schnitzel",
       "This is simply a test",
       "https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG",
-      [new Ingredient("Meat", 1), new Ingredient("French Fries", 20)]
+      [new Ingredient("Sausage Meat", 1), new Ingredient("French Fries", 20)]
     ),
     new Recipe(
       "Burger",
@@ -27,6 +27,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
