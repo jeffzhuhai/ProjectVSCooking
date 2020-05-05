@@ -2,6 +2,9 @@ import { Subject } from "rxjs";
 
 import { Ingredient } from "../shared/ingredient.model";
 export class ShoppingListService {
+  setValue(arg0: { name: string; amount: number }) {
+    throw new Error("Method not implemented.");
+  }
   ingredientsChanged = new Subject<Ingredient[]>();
   startedEditing = new Subject<number>();
 
@@ -25,6 +28,11 @@ export class ShoppingListService {
 
   addIngredients(ingredients: Ingredient[]) {
     this.ingredients.push(...ingredients);
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
+  updateIngredient(index: number, newIngredient: Ingredient) {
+    this.ingredients[index] = newIngredient;
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 }
