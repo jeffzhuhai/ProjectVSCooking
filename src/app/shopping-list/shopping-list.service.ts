@@ -1,13 +1,9 @@
-import { Subject } from "rxjs";
-
 import { Ingredient } from "../shared/ingredient.model";
+import { Subject } from "rxjs/Subject";
+
 export class ShoppingListService {
-  setValue(arg0: { name: string; amount: number }) {
-    throw new Error("Method not implemented.");
-  }
   ingredientsChanged = new Subject<Ingredient[]>();
   startedEditing = new Subject<number>();
-
   private ingredients: Ingredient[] = [
     new Ingredient("Apples", 5),
     new Ingredient("Tomatoes", 10),
@@ -27,12 +23,20 @@ export class ShoppingListService {
   }
 
   addIngredients(ingredients: Ingredient[]) {
+    // for (let ingredient of ingredients) {
+    //   this.addIngredient(ingredient);
+    // }
     this.ingredients.push(...ingredients);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
   updateIngredient(index: number, newIngredient: Ingredient) {
     this.ingredients[index] = newIngredient;
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
+  deleteIngredient(index: number) {
+    this.ingredients.splice(index, 1);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 }
