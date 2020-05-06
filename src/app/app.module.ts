@@ -13,8 +13,8 @@ import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-ed
 import { DropdownDirective } from "./shared/dropdown.directive";
 import { ShoppingListService } from "./shopping-list/shopping-list.service";
 import { AppRoutingModule } from "./app-routing.module";
-import { RecipeStartComponentComponent } from "./recipe-start-component/recipe-start-component.component";
-import { RecipeEditComponentComponent } from "./recipe-edit-component/recipe-edit-component.component";
+import { RecipeStartComponentComponent } from "./recipes/recipe-start-component/recipe-start-component.component";
+import { RecipeEditComponentComponent } from "./recipes/recipe-edit/recipe-edit-component.component";
 import { RecipeService } from "./recipes/recipes.service";
 
 @NgModule({
