@@ -9,18 +9,7 @@ import { RecipeService } from "../recipes.service";
   styleUrls: ["./recipe-list.component.css"],
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [
-    new Recipe(
-      "Schnitzel",
-      "This is simply a test",
-      "https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG"
-    ),
-    new Recipe(
-      "Burger",
-      "This is simply a test",
-      "https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg"
-    ),
-  ];
+  recipes: Recipe[] = [];
 
   constructor(private recipeService: RecipeService) {}
 
