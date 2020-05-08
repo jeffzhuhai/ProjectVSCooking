@@ -66,7 +66,7 @@ export class RecipeEditComponentComponent implements OnInit {
     let recipeName = "";
     let recipeImagePath = "";
     let recipeDescription = "";
-    let recipeIngredients = new FormArray([]);
+    const recipeIngredients = new FormArray([]);
 
     if (this.editMode) {
       const recipe = this.recipeService.getRecipe(this.id);
@@ -94,5 +94,9 @@ export class RecipeEditComponentComponent implements OnInit {
       description: new FormControl(recipeDescription, Validators.required),
       ingredients: recipeIngredients,
     });
+  }
+
+  get controls() {
+    return (<FormArray>this.recipeForm.get("ingredients")).controls;
   }
 }
