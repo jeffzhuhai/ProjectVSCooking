@@ -10,20 +10,7 @@ import { Subject } from "rxjs/Subject";
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
-  private recipes: Recipe[] = [
-    new Recipe(
-      "Schnitzel",
-      "This is simply a test",
-      "https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG",
-      [new Ingredient("Meat", 1), new Ingredient("French Fries", 20)]
-    ),
-    new Recipe(
-      "Burger",
-      "This is simply a test",
-      "https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg",
-      [new Ingredient("Meat", 1), new Ingredient("Buns", 2)]
-    ),
-  ];
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppingListService) {}
 
@@ -51,6 +38,11 @@ export class RecipeService {
 
   deleteRecipe(index: number) {
     this.recipes.splice(index, 1);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+  setRecipes(recopes: Recipe[]) {
+    this.recipes = recopes;
     this.recipesChanged.next(this.recipes.slice());
   }
 }
