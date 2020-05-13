@@ -3,9 +3,9 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { RecipesComponent } from "./recipes/recipes.component";
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
-import { RecipeStartComponent } from "./recipes/recipe-start/recipe-start.component";
+import { RecipeStartComponentComponent } from "./recipes/recipe-start-component/recipe-start-component.component";
 import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.component";
-import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component";
+import { RecipeEditComponentComponent } from "./recipes/recipe-edit/recipe-edit-component.component";
 import { RecipesResolverService } from "./recipes/recipes-resolver.service";
 
 const appRoutes: Routes = [
@@ -14,8 +14,8 @@ const appRoutes: Routes = [
     path: "recipes",
     component: RecipesComponent,
     children: [
-      { path: "", component: RecipeStartComponent },
-      { path: "new", component: RecipeEditComponent },
+      { path: "", component: RecipeStartComponentComponent },
+      { path: "new", component: RecipeEditComponentComponent },
       {
         path: ":id",
         component: RecipeDetailComponent,
@@ -23,7 +23,7 @@ const appRoutes: Routes = [
       },
       {
         path: ":id/edit",
-        component: RecipeEditComponent,
+        component: RecipeEditComponentComponent,
         resolve: [RecipesResolverService],
       },
     ],
