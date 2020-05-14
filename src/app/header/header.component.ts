@@ -11,9 +11,11 @@ export class HeaderComponent {
 
   onSaveData() {
     this.dataStorageService.storeRecipes();
+    console.log("onSave Data has been pressed");
   }
 
   onFetchData() {
     this.dataStorageService.fetchRecipes().subscribe();
+    console.log("onFetch Data has been pressed");
   }
 }
