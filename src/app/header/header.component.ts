@@ -15,7 +15,8 @@ export class HeaderComponent {
   }
 
   onFetchData() {
-    this.dataStorageService.fetchRecipes().subscribe();
+    this.dataStorageService.fetchRecipes();
+
     console.log("onFetch Data has been pressed");
   }
 }

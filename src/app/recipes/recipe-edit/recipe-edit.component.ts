@@ -2,14 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { FormGroup, FormControl, FormArray, Validators } from "@angular/forms";
 
-import { RecipeService } from "../recipes.service";
+import { RecipeService } from "../recipe.service";
 
 @Component({
-  selector: "app-recipe-edit",
-  templateUrl: "./recipe-edit-component.component.html",
-  styleUrls: ["./recipe-edit-component.component.css"],
+  selector: "app-recipe-edit-component",
+  templateUrl: "./recipe-edit.component.html",
+  styleUrls: ["./recipe-edit.component.css"],
 })
-export class RecipeEditComponentComponent implements OnInit {
+export class RecipeEditComponent implements OnInit {
   id: number;
   editMode = false;
   recipeForm: FormGroup;
