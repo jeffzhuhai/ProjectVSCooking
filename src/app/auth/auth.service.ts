@@ -18,15 +18,11 @@ export class AuthService {
 
   signup(email: string, password: string) {
     return this.http
-      .post<AuthResponseData>(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBwK_WFYUrCrZR_wbJqg7G-89izAHQ32U8",
-
-        {
-          email: email,
-          password: password,
-          returnSecureToken: true,
-        }
-      )
+      .post<AuthResponseData>({
+        email: email,
+        password: password,
+        returnSecureToken: true,
+      })
       .pipe(
         catchError((errorRes) => {
           let errorMessage = "An unknown error occurred!";
