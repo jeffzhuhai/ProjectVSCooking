@@ -28,6 +28,7 @@ export class AuthService {
       .post<AuthResponseData>(
         "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBwK_WFYUrCrZR_wbJqg7G-89izAHQ32U8",
         {
+          // new comment
           email: email,
           password: password,
           returnSecureToken: true,
