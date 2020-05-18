@@ -17,6 +17,7 @@ export class AuthComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onSwitchMode() {
+    // new comment
     this.isLoginMode = !this.isLoginMode;
   }
 
